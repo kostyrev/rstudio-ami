@@ -1,0 +1,11 @@
+- src: https://github.com/Oefenweb/ansible-r
+  name: ansible-r
+
+- src: https://github.com/Oefenweb/ansible-rstudio-server
+  name: ansible-rstudio-server
+
+- src: https://github.com/geerlingguy/ansible-role-nginx
+  name: geerlingguy.nginx
+
+- src: https://github.com/kostyrev/ansible-role-shiny-server
+  name: kostyrev.shiny-server

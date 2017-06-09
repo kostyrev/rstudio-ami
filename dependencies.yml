@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  pre_tasks:
+
+    - name: prevent daemons from starting after installing a package
+      copy:
+        dest: /usr/sbin/policy-rc.d
+        mode: '0755'
+        content: "#!/bin/sh\nexit 101\n"
+
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: install build dependencies
+      package:
+        name: "{{ item }}"
+      with_items:
+        - libcurl4-openssl-dev
+        - libssl-dev
+        - libgmp3-dev

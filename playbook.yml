@@ -1,0 +1,4 @@
+- include: dependencies.yml
+- include: r.yml
+- include: rstudio-server.yml
+- include: RStudioAMI.yml

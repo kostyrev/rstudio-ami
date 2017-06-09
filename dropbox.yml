@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - name: dropbox | Copy .dropbox-ami to /home/rstudio/.dropbox-ami
+      copy:
+        src: .dropbox-ami
+        dest: /home/rstudio/.dropbox-ami
+        owner: rstudio
+        group: rstudio
+
+    - name: dropbox | Install Dropbox
+      become: yes
+      become_user: rstudio
+      shell: curl -L "https://www.dropbox.com/download?plat=lnx.{{ ansible_architecture }}" | tar -C $HOME -xzf - creates=/home/rstudio/.dropbox-dist/dropboxd

@@ -1,0 +1,69 @@
+---
+
+- hosts: all
+  roles:
+    - role: ansible-r
+      r_cran_mirror: https://cran.cnr.berkeley.edu
+      r_install:
+        - littler
+      r_packages:
+        - name: shiny
+          repos: http://cran.rstudio.com/
+        - name: assertthat
+        - name: backports
+        - name: base64enc
+        - name: BH
+        - name: bitops
+        - name: caTools
+        - name: colorspace
+        - name: crayon
+        - name: devtools
+        - name: dichromat
+        - name: digest
+        - name: evaluate
+        - name: ggplot2
+        - name: git2r
+        - name: gmp
+        - name: gridExtra
+        - name: gtable
+        - name: highr
+        - name: htmltools
+        - name: httpuv
+        - name: httr
+        - name: inline
+        - name: IRdisplay
+        - name: jsonlite
+        - name: knitr
+        - name: labeling
+        - name: lazyeval
+        - name: magrittr
+        - name: markdown
+        - name: memoise
+        - name: mime
+        - name: munsell
+        - name: openssl
+        - name: pbdZMQ
+        - name: plyr
+        - name: R6
+        - name: RColorBrewer
+        - name: Rcpp
+        - name: RcppEigen
+        - name: RcppParallel
+        - name: repr
+        - name: reshape2
+        - name: rlang
+        - name: rmarkdown
+        - name: rprojroot
+        - name: rstan
+        - name: rstudioapi
+        - name: scales
+        - name: sourcetools
+        - name: StanHeaders
+        - name: stringi
+        - name: stringr
+        - name: tibble
+        - name: uuid
+        - name: whisker
+        - name: withr
+        - name: xtable
+        - name: yaml

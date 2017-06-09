@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  tasks:
+    - name: create rstudio group
+      group:
+        name: rstudio
+        gid: 1001
+        state: present
+
+    - name: create rstudio user with rstudio password
+      user:
+        name: rstudio
+        uid: 1001
+        group: rstudio
+        password: '$6$sps7ZG/g$PC/XQuiW08jE4/HLpYOJG0W4ZDTWKm1hqgyS76qnrDqIEA4s7R26l0CxYXB3EKm0nvm3upxifNeiVpRRKiPAG.'

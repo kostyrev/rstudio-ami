@@ -1,0 +1,15 @@
+- hosts: all
+  tasks:
+
+    - name: copy Welcome.R to /home/rstudio/Welcome.R
+      copy:
+        src: Welcome.R
+        dest: /home/rstudio/Welcome.R
+        owner: rstudio
+        group: rstudio
+        mode: '0644'
+
+    - name: clone RStudioAMI R package
+      git:
+        repo: https://github.com/nwstephens/RStudioAMI.git
+        dest: /home/rstudio/R/x86_64-pc-linux-gnu-library/3.4/RStudioAMI
