@@ -1,12 +1,12 @@
 - hosts: all
+  become: yes
+  become_user: rstudio
   tasks:
 
     - name: copy Welcome.R to /home/rstudio/Welcome.R
       copy:
         src: Welcome.R
         dest: /home/rstudio/Welcome.R
-        owner: rstudio
-        group: rstudio
         mode: '0644'
 
     - name: clone RStudioAMI R package
