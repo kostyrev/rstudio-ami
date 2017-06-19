@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install packages using pip
+      pip:
+        name: "{{ item }}"
+        executable: /usr/bin/pip
+      with_items:
+        - xgboost
+        - folium
+      when:
+        - ansible_distribution == "Ubuntu"
+        - ansible_distribution_version|version_compare(16.04, '<=')

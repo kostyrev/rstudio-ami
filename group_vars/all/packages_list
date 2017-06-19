@@ -1,0 +1,8 @@
+---
+package_update_cache: true
+package_list:
+  name:
+    - "{{ 'python-pip' if ansible_os_family == 'Debian' else '/usr/bin/pip' }}"
+    - python3-sqlalchemy
+    - python3-geopy
+    - python3-psycopg2
