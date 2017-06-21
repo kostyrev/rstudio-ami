@@ -4,3 +4,4 @@ terraform/
 terraform-fasten/
 r-packages
 .molecule
+tf-rstudio-server
